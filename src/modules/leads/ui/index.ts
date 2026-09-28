@@ -1,4 +1,3 @@
-// modules/leads/ui — captura de email, consentimento, listas de espera
-// Populado em T4 (ver site-definitions-now-future.md secao 44).
+// modules/leads/ui — form de captura de email na pagina de resultado
 // Regra de dependencia: Componentes React. Depende de application (casos de uso), nunca o contrario.
-export {}
+export { LeadCaptureForm } from './LeadCaptureForm'

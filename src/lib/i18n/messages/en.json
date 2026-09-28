@@ -1,7 +1,8 @@
 {
   "navigation": {
     "home": "Home",
-    "books": "Books"
+    "books": "Books",
+    "privacy": "Privacy"
   },
   "home": {
     "tagline": "Light for growing hearts.",
@@ -38,7 +39,62 @@
     "bookCta": "Find it on Amazon",
     "bookComingSoon": "We're preparing a story about this theme.",
     "notFoundTitle": "Result not found",
-    "notFoundBody": "This result may have expired, or the link is incorrect."
+    "notFoundBody": "This result may have expired, or the link is incorrect.",
+    "emailSubject": "Your result",
+    "emailGreeting": "Here's your quiz result, along with a few questions to talk through with your child.",
+    "emailFooter": "NerLev — Light for growing hearts."
   },
-  "forms": {}
+  "forms": {
+    "leadCapture": {
+      "promptWithBook": "Want to receive this result along with questions to talk through with your child?",
+      "promptWithoutBook": "We don't have a book on this theme yet. Want us to let you know when it's out?",
+      "emailLabel": "Your email",
+      "emailPlaceholder": "you@example.com",
+      "marketingConsentLabel": "I'd like to hear about new books in the collection.",
+      "submitLabel": "Send",
+      "waitlistSubmitLabel": "Notify me",
+      "successMessage": "All set! Keep an eye on your inbox.",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "privacy": {
+    "title": "Privacy",
+    "draftNotice": "This is the first version (v1) of this policy, written by our team based on what the site actually does. It hasn't gone through formal legal review yet — we'll update it as the project grows.",
+    "updated": "Updated September 2026",
+    "intro": "Meu Coração Diante de Deus is a quiz and book catalog for parents. We take seriously that we're handling information about children, even without identifying them directly. This page explains what we do with the data you give us.",
+    "neverCollectTitle": "What we never collect",
+    "neverCollect": [
+      "Your child's name",
+      "Your child's school",
+      "Address",
+      "Phone number",
+      "Photo",
+      "Exact date of birth"
+    ],
+    "collectTitle": "What we collect",
+    "collect": [
+      "Your child's age range (not their exact birth date)",
+      "Your answers to the quiz",
+      "Optional open-ended text, only if you agree to share it"
+    ],
+    "consentTitle": "Two consents, always separate",
+    "consentResearch": "At the end of the quiz, we ask if we can use your open-ended answers (without identifying you or your child) to improve future books in the collection. If you don't check that box, none of that text is saved — not even a record saying you declined.",
+    "consentMarketing": "If you leave your email to receive your result, you can separately choose whether you want to hear about new books. Declining that never keeps you from receiving your result by email.",
+    "providersTitle": "Who processes this data for us",
+    "providersIntro": "We use a small number of external services, each chosen for what it does, not by default:",
+    "providerSupabase": "Supabase (database, servers in the European Union) stores your answers and, if you leave it, your email.",
+    "providerResend": "Resend sends the result email, when you ask for it.",
+    "providerPostHog": "PostHog (servers in the European Union) records how pages are used (not the content of your answers) so we can understand what's working. Today it starts running as soon as you open the site, without asking permission first — we know this is a real gap and plan to add a cookie notice to fix it.",
+    "securityTitle": "How we protect what you share",
+    "security": [
+      "Every input is validated on the server before being saved",
+      "Open-ended text has a size limit",
+      "We limit how many times the same visitor can submit forms in a short time",
+      "A hidden field helps block automated (bot) submissions",
+      "The whole site runs on HTTPS",
+      "Technical keys and secrets never reach your browser"
+    ],
+    "contactTitle": "Questions?",
+    "contactBody": "We don't yet have a dedicated support channel with our own domain for this project — that's something we plan to add once the site is past its early stage."
+  }
 }

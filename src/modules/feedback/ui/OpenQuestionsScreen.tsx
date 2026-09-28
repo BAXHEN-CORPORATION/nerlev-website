@@ -39,7 +39,9 @@ export function OpenQuestionsScreen({
 
   return (
     <div className="flex w-full max-w-md flex-col gap-4 text-left">
-      <p className="font-display text-deep-blue text-center text-xl font-semibold">{t('title')}</p>
+      <h2 className="font-display text-deep-blue text-center text-xl font-semibold">
+        {t('title')}
+      </h2>
 
       <label className="flex items-start gap-2 text-sm">
         <input

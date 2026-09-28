@@ -4,6 +4,8 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { isValidLocale, routing } from '@/lib/i18n/routing'
 import { getBookBySlug, listBooks } from '@/modules/catalog/application'
 import { BookCover } from '@/modules/catalog/ui'
+import { buildAlternates } from '@/shared/seo/alternates'
+import { absoluteUrl, assetUrl } from '@/shared/seo/site-url'
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -18,9 +20,20 @@ export async function generateMetadata({
   const book = getBookBySlug(slug)
   if (!book || !isValidLocale(locale)) return {}
 
+  const title = `${book.title[locale]} — NerLev`
+  const description = book.subtitle[locale]
+
   return {
-    title: `${book.title[locale]} — NerLev`,
-    description: book.subtitle[locale],
+    title,
+    description,
+    alternates: buildAlternates(locale, `/livros/${slug}`),
+    openGraph: {
+      title,
+      description,
+      locale,
+      type: 'website',
+      images: [assetUrl(book.cover.src)],
+    },
   }
 }
 
@@ -34,8 +47,22 @@ export default async function BookPage({ params }: PageProps<'/[locale]/livros/[
 
   const t = await getTranslations('home')
 
+  // Schema.org Book (spec §36) — only fields backed by real data in the catalog domain,
+  // no invented isbn/rating/etc.
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Book',
+    name: book.title[locale],
+    description: book.subtitle[locale],
+    author: { '@type': 'Person', name: book.author },
+    image: assetUrl(book.cover.src),
+    url: absoluteUrl(locale, `/livros/${book.slug}`),
+    inLanguage: locale,
+  }
+
   return (
     <main className="mx-auto flex max-w-3xl flex-1 flex-col items-center gap-8 px-6 py-16 text-center">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="w-64 sm:w-80">
         <BookCover book={book} alt={book.title[locale]} priority />
       </div>

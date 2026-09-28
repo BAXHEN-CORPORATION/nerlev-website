@@ -1,4 +1,3 @@
-// modules/leads/domain — captura de email, consentimento, listas de espera
-// Populado em T4 (ver site-definitions-now-future.md secao 44).
+// modules/leads/domain — lead capturado no resultado do quiz + vinculo com a sessao
 // Regra de dependencia: Regras de negocio e tipos puros do modulo. Nao importa de application/infrastructure/ui.
-export {}
+export type { Lead, CaptureLeadInput } from './lead'

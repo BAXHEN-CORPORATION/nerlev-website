@@ -17,9 +17,11 @@ test('completing the quiz picking the first option each time lands on a fear res
   await page.waitForURL(/\/resultado\//)
   await expect(page.getByRole('heading', { name: 'Medo', level: 1 })).toBeVisible()
   await expect(page.getByText('Tema secundário')).toBeVisible()
+  // ?session=<id> is appended (T5, spec §67) so the click can be attributed back to
+  // this quiz session — see attribution.spec.ts / tests/e2e for the redirect itself.
   await expect(page.getByRole('link', { name: 'Conhecer na Amazon' })).toHaveAttribute(
     'href',
-    '/r/b01/amazon',
+    /^\/r\/b01\/amazon\?session=[0-9a-f-]+$/,
   )
 })
 

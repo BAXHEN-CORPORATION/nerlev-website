@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import { Fraunces, Inter } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages, setRequestLocale } from 'next-intl/server'
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { isValidLocale, routing } from '@/lib/i18n/routing'
+import { isValidLocale, Link, routing } from '@/lib/i18n/routing'
+import { PostHogProvider } from '@/modules/analytics/ui'
+import { siteUrl } from '@/shared/seo/site-url'
 import '../globals.css'
 
 const fraunces = Fraunces({
@@ -17,6 +19,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl()),
   title: 'NerLev',
   description: 'Light for growing hearts.',
 }
@@ -34,11 +37,19 @@ export default async function RootLayout({ children, params }: LayoutProps<'/[lo
 
   setRequestLocale(locale)
   const messages = await getMessages()
+  const t = await getTranslations({ locale, namespace: 'navigation' })
 
   return (
     <html lang={locale} className={`${fraunces.variable} ${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
+          <PostHogProvider>{children}</PostHogProvider>
+          <footer className="mt-auto px-6 py-6 text-center">
+            <Link href="/privacidade" className="text-warm-gray text-xs underline">
+              {t('privacy')}
+            </Link>
+          </footer>
+        </NextIntlClientProvider>
       </body>
     </html>
   )

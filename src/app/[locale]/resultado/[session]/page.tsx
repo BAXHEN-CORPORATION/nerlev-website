@@ -6,6 +6,7 @@ import { getQuizResult } from '@/modules/quiz/actions'
 import { getThemeById } from '@/modules/quiz/definitions/v1'
 import { listBooks } from '@/modules/catalog/application'
 import { BookCover } from '@/modules/catalog/ui'
+import { LeadCaptureForm } from '@/modules/leads/ui'
 
 // spec §36: resultados do quiz nunca aparecem em busca — dado pessoal do pai, não conteúdo público.
 export const metadata: Metadata = {
@@ -67,7 +68,7 @@ export default async function ResultPage({ params }: PageProps<'/[locale]/result
             <BookCover book={book} alt={book.title[locale]} />
           </div>
           <a
-            href={`/r/${book.code.toLowerCase()}/amazon`}
+            href={`/r/${book.code.toLowerCase()}/amazon?session=${session}`}
             className="bg-deep-blue text-soft-white rounded-full px-8 py-3 text-base font-medium transition-opacity hover:opacity-90"
           >
             {t('bookCta')}
@@ -76,6 +77,8 @@ export default async function ResultPage({ params }: PageProps<'/[locale]/result
       ) : (
         <p className="text-warm-gray">{t('bookComingSoon')}</p>
       )}
+
+      <LeadCaptureForm sessionId={session} locale={locale} hasBook={!!book} />
     </main>
   )
 }

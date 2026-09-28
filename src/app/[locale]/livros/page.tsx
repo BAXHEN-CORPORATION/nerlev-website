@@ -4,14 +4,21 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { isValidLocale } from '@/lib/i18n/routing'
 import { listBooks } from '@/modules/catalog/application'
 import { BookCard } from '@/modules/catalog/ui'
+import { buildAlternates } from '@/shared/seo/alternates'
 
 export async function generateMetadata({
   params,
 }: PageProps<'/[locale]/livros'>): Promise<Metadata> {
   const { locale } = await params
+  if (!isValidLocale(locale)) return {}
   const t = await getTranslations({ locale, namespace: 'navigation' })
+  const title = `NerLev — ${t('books')}`
 
-  return { title: `NerLev — ${t('books')}` }
+  return {
+    title,
+    alternates: buildAlternates(locale, '/livros'),
+    openGraph: { title, locale, type: 'website' },
+  }
 }
 
 export default async function BooksPage({ params }: PageProps<'/[locale]/livros'>) {

@@ -26,7 +26,12 @@ pode ser coletado, e que proteções técnicas são obrigatórias.
   minimização de dado aplicada até na decisão de não escrever, não só nos campos
   coletados. `marketing` fica pra T4 (quando o lead/email existir).
   `v_open_feedback` (view de análise, spec §41) filtra por `research_consent = true` —
-  consentimento é respeitado também na leitura, não só na coleta.
+  consentimento é respeitado também na leitura, não só na coleta. `marketing`
+  implementado em T4: opcional e separado do envio do email transacional — recusar
+  marketing não impede receber o resultado por email (spec §14: "não obrigar aceitar
+  newsletter pra ver o resultado").
+- Email transacional (T4) é best-effort: falha no envio (`Resend`) nunca derruba a
+  gravação do lead — captura de dado e entrega de email são preocupações separadas.
 
 ## Alternatives
 
@@ -40,10 +45,17 @@ pode ser coletado, e que proteções técnicas são obrigatórias.
 
 - Toda feature nova que queira coletar um campo novo precisa justificar contra essa
   lista antes de implementar — não é decisão ad-hoc por módulo.
-- Rate limiting, honeypot anti-spam e HTTPS (spec §29) ainda não implementados — entram
-  em T6 (Production Hardening).
+- T6 (Production Hardening) implementou rate limiting (`nerlev.rate_limits` +
+  `rate_limit_hit`, chamado só pelo client service-role — sem GRANT nenhum pro `anon`)
+  em `startQuizSession`, `submitQuizOpenFeedback`, `captureQuizLead` e no redirect
+  `/r/[book]/amazon`, e honeypot no `LeadCaptureForm`. HTTPS é responsabilidade do
+  hosting (Netlify), não do código.
+- `/privacidade` (T6) documenta essas decisões pro usuário final — inclusive a lacuna
+  conhecida e não corrigida do PostHog disparando sem gate de consentimento (decisão
+  consciente do usuário, não esquecimento).
 
 ## Status
 
-Accepted (env server/client split) — parcialmente implementado; RLS/consent/rate
-limiting ficam para T2-T6 conforme as tabelas/rotas nascem.
+Accepted — RLS/consent/rate limiting/honeypot implementados (T2-T6). Cookie-consent
+banner pro PostHog e monitoring externo (Sentry) ficam como gaps conhecidos, não
+implementados por decisão do usuário nesta fase.

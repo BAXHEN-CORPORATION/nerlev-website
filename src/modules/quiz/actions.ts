@@ -7,6 +7,7 @@
 
 import { z } from 'zod'
 import { isValidLocale } from '@/lib/i18n/routing'
+import { assertWithinRateLimit } from '@/shared/rate-limit'
 import {
   completeSession as completeSessionUseCase,
   getSessionResult as getSessionResultUseCase,
@@ -35,6 +36,7 @@ const startInputSchema = z.object({
 export async function startQuizSession(input: z.infer<typeof startInputSchema>) {
   const parsed = startInputSchema.parse(input)
   if (!isValidLocale(parsed.locale)) throw new Error(`Invalid locale: ${parsed.locale}`)
+  await assertWithinRateLimit('quiz_start', { limit: 20, windowSeconds: 600 })
 
   const { sessionId } = await startSessionUseCase(repository(), {
     quizVersion: QUIZ_VERSION,

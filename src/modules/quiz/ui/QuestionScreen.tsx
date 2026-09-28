@@ -14,9 +14,9 @@ export function QuestionScreen({
 }) {
   return (
     <div className="flex w-full max-w-md flex-col items-center gap-6 text-center">
-      <p className="font-display text-deep-blue text-xl font-semibold sm:text-2xl">
+      <h2 className="font-display text-deep-blue text-xl font-semibold sm:text-2xl">
         {question.prompt[locale]}
-      </p>
+      </h2>
       <div className="flex w-full flex-col gap-3">
         {question.options.map((option) => (
           <button

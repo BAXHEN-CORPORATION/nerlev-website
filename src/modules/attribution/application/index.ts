@@ -1,4 +1,4 @@
-// modules/attribution/application — UTMs, CUT_ID, redirect Amazon rastreado
-// Populado em T5 (ver site-definitions-now-future.md secao 44).
+// modules/attribution/application — caso de uso: registrar clique no redirect da Amazon
 // Regra de dependencia: Casos de uso, orquestra domain + interfaces de repository. Nao importa de infrastructure/ui.
-export {}
+export type { AmazonClickRepository } from './amazon-click-repository'
+export { logAmazonClick } from './log-amazon-click'

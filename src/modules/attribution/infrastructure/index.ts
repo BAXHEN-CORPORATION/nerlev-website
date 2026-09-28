@@ -1,4 +1,3 @@
-// modules/attribution/infrastructure — UTMs, CUT_ID, redirect Amazon rastreado
-// Populado em T5 (ver site-definitions-now-future.md secao 44).
+// modules/attribution/infrastructure — implementacao Supabase do AmazonClickRepository (schema nerlev).
 // Regra de dependencia: Implementacoes concretas (Supabase, email, etc) das interfaces definidas por domain/application. Nunca importado por domain/application.
-export {}
+export { createSupabaseAmazonClickRepository } from './amazon-click.repository'

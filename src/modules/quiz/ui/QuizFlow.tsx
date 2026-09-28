@@ -10,7 +10,21 @@ import { questions } from '../definitions/v1'
 import { initialQuizState, quizReducer } from './quiz-state'
 import { QuestionScreen } from './QuestionScreen'
 
-export function QuizFlow({ locale }: { locale: Locale }) {
+export interface QuizAttribution {
+  utmSource?: string
+  utmMedium?: string
+  utmCampaign?: string
+  utmContent?: string
+  referrer?: string
+}
+
+export function QuizFlow({
+  locale,
+  attribution,
+}: {
+  locale: Locale
+  attribution?: QuizAttribution
+}) {
   const [state, dispatch] = useReducer(quizReducer, initialQuizState)
   const t = useTranslations('quiz')
   const router = useRouter()
@@ -18,7 +32,7 @@ export function QuizFlow({ locale }: { locale: Locale }) {
   async function handleStart() {
     dispatch({ type: 'START_REQUESTED' })
     try {
-      const { sessionId } = await startQuizSession({ locale })
+      const { sessionId } = await startQuizSession({ locale, ...attribution })
       dispatch({ type: 'START_SUCCEEDED', sessionId })
     } catch {
       dispatch({ type: 'FAILED', message: t('error') })
@@ -73,7 +87,11 @@ export function QuizFlow({ locale }: { locale: Locale }) {
   }
 
   if (state.status === 'error') {
-    return <p className="text-soft-terracotta">{state.message}</p>
+    return (
+      <p role="alert" className="text-soft-terracotta">
+        {state.message}
+      </p>
+    )
   }
 
   if (state.status === 'question' || state.status === 'saving') {
@@ -81,7 +99,7 @@ export function QuizFlow({ locale }: { locale: Locale }) {
     if (!question) return null
 
     return (
-      <div className="flex flex-col items-center gap-4">
+      <div aria-live="polite" className="flex flex-col items-center gap-4">
         <p className="text-warm-gray text-sm">
           {t('progress', { current: state.questionIndex + 1, total: questions.length })}
         </p>

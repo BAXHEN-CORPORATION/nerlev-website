@@ -4,6 +4,7 @@
 // Server Actions sao o unico ponto que conhece application + infrastructure ao mesmo tempo.
 
 import { z } from 'zod'
+import { assertWithinRateLimit } from '@/shared/rate-limit'
 import { submitOpenFeedback as submitOpenFeedbackUseCase } from './application'
 import { createSupabaseFeedbackRepository } from './infrastructure'
 
@@ -23,6 +24,7 @@ const submitInputSchema = z.object({
 
 export async function submitQuizOpenFeedback(input: z.infer<typeof submitInputSchema>) {
   const parsed = submitInputSchema.parse(input)
+  await assertWithinRateLimit('feedback_submit', { limit: 10, windowSeconds: 600 })
 
   await submitOpenFeedbackUseCase(createSupabaseFeedbackRepository(), {
     sessionId: parsed.sessionId,

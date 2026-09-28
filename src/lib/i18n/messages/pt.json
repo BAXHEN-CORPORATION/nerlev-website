@@ -1,7 +1,8 @@
 {
   "navigation": {
     "home": "Início",
-    "books": "Livros"
+    "books": "Livros",
+    "privacy": "Privacidade"
   },
   "home": {
     "tagline": "Luz para corações em crescimento.",
@@ -38,7 +39,62 @@
     "bookCta": "Conhecer na Amazon",
     "bookComingSoon": "Estamos preparando uma história sobre este tema.",
     "notFoundTitle": "Resultado não encontrado",
-    "notFoundBody": "Esse resultado pode ter expirado ou o link está incorreto."
+    "notFoundBody": "Esse resultado pode ter expirado ou o link está incorreto.",
+    "emailSubject": "Seu resultado",
+    "emailGreeting": "Aqui está o resultado do questionário, com algumas perguntas pra conversar com seu filho.",
+    "emailFooter": "NerLev — Luz para corações em crescimento."
   },
-  "forms": {}
+  "forms": {
+    "leadCapture": {
+      "promptWithBook": "Quer receber este resultado com perguntas para conversar com seu filho?",
+      "promptWithoutBook": "Ainda não temos um livro sobre esse tema. Quer ser avisado quando ele sair?",
+      "emailLabel": "Seu email",
+      "emailPlaceholder": "voce@exemplo.com",
+      "marketingConsentLabel": "Quero receber novidades sobre novos livros da coleção.",
+      "submitLabel": "Enviar",
+      "waitlistSubmitLabel": "Quero ser avisado",
+      "successMessage": "Prontinho! Fique de olho na sua caixa de entrada.",
+      "error": "Algo deu errado. Tente novamente."
+    }
+  },
+  "privacy": {
+    "title": "Privacidade",
+    "draftNotice": "Esta é a primeira versão (v1) desta política, escrita pela nossa equipe a partir do que o site realmente faz. Ainda não passou por revisão jurídica formal — vamos atualizá-la conforme o projeto cresce.",
+    "updated": "Atualizado em setembro de 2026",
+    "intro": "O Meu Coração Diante de Deus é um questionário e um catálogo de livros voltado a pais. Levamos a sério que estamos lidando com informações sobre crianças, mesmo sem identificá-las diretamente. Esta página explica o que fazemos com os dados que você nos dá.",
+    "neverCollectTitle": "O que nunca coletamos",
+    "neverCollect": [
+      "Nome da criança",
+      "Escola da criança",
+      "Endereço",
+      "Telefone",
+      "Foto",
+      "Data de nascimento exata"
+    ],
+    "collectTitle": "O que coletamos",
+    "collect": [
+      "Faixa etária da criança (não a data exata de nascimento)",
+      "Suas respostas no questionário",
+      "Um texto aberto opcional, só se você concordar em compartilhar"
+    ],
+    "consentTitle": "Dois consentimentos, sempre separados",
+    "consentResearch": "Ao final do questionário, perguntamos se podemos usar suas respostas abertas (sem identificar você ou seu filho) para melhorar os próximos livros da coleção. Se você não marcar essa opção, nada do texto aberto é salvo — nem um registro dizendo que você recusou.",
+    "consentMarketing": "Se você deixar seu email para receber o resultado, pode escolher separadamente se quer receber novidades sobre novos livros. Recusar isso nunca impede você de receber o resultado por email.",
+    "providersTitle": "Quem processa esses dados por nós",
+    "providersIntro": "Usamos poucos serviços externos, todos escolhidos pelo que fazem, não por padrão:",
+    "providerSupabase": "Supabase (banco de dados, servidores na União Europeia) guarda suas respostas e, se você deixar, seu email.",
+    "providerResend": "Resend envia o email com seu resultado, quando você pede.",
+    "providerPostHog": "PostHog (servidores na União Europeia) registra como as páginas são usadas (não o conteúdo das suas respostas) para entendermos o que está funcionando. Hoje ele começa a rodar assim que você abre o site, sem pedir sua permissão antes — sabemos que essa é uma lacuna real e pretendemos corrigir com um aviso de cookies.",
+    "securityTitle": "Como protegemos o que você compartilha",
+    "security": [
+      "Toda entrada é validada no servidor antes de ser salva",
+      "Textos abertos têm limite de tamanho",
+      "Limitamos quantas vezes o mesmo visitante pode enviar formulários em pouco tempo",
+      "Um campo escondido ajuda a barrar envios automatizados (bots)",
+      "O site inteiro roda em HTTPS",
+      "Chaves e segredos técnicos nunca chegam ao seu navegador"
+    ],
+    "contactTitle": "Alguma dúvida?",
+    "contactBody": "Ainda não temos um canal de suporte dedicado com domínio próprio para este projeto — é algo que pretendemos ter assim que o site sair do estágio inicial."
+  }
 }

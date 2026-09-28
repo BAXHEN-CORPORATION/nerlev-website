@@ -1,4 +1,3 @@
-// modules/analytics/ui — eventos de produto, funis, PostHog
-// Populado em T5 (ver site-definitions-now-future.md secao 44).
+// modules/analytics/ui — provider do PostHog (camada comportamental, spec §27)
 // Regra de dependencia: Componentes React. Depende de application (casos de uso), nunca o contrario.
-export {}
+export { PostHogProvider } from './PostHogProvider'
