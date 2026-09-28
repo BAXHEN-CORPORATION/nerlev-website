@@ -1,0 +1,11 @@
+.next
+out
+node_modules
+supabase
+brandkit
+test-results
+playwright-report
+pnpm-lock.yaml
+next-env.d.ts
+site-definitions-now-future.md
+nerlev-visual-identity-spec.md

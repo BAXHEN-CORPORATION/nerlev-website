@@ -1,0 +1,2 @@
+-- Seed data for local development. Empty in T0 — populated as each module lands
+-- its own tables (T2+). No domain tables exist yet.

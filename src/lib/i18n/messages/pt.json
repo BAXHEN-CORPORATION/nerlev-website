@@ -1,0 +1,44 @@
+{
+  "navigation": {
+    "home": "Início",
+    "books": "Livros"
+  },
+  "home": {
+    "tagline": "Luz para corações em crescimento.",
+    "proposalTitle": "Meu Coração Diante de Deus",
+    "proposalBody": "Histórias que ajudam pais a formar o coração dos filhos à luz da Palavra.",
+    "ctaQuiz": "Descubra qual tema pode ser mais importante trabalhar com seu filho agora.",
+    "ctaQuizButton": "Fazer o questionário",
+    "philosophyTitle": "Não é só uma editora infantil",
+    "philosophyBody": "É um universo cristão de formação infantil por meio de histórias, experiências, atividades e jogos.",
+    "bookSectionTitle": "Nosso primeiro livro",
+    "ctaAmazon": "Conhecer na Amazon",
+    "comingSoon": "Novos livros da coleção Meu Coração Diante de Deus estão a caminho."
+  },
+  "quiz": {
+    "intro": "Leva menos de 2 minutos. Vamos descobrir juntos qual tema pode ser mais importante trabalhar com seu filho agora.",
+    "start": "Começar",
+    "loading": "Só um momento...",
+    "error": "Algo deu errado. Tente novamente.",
+    "progress": "Pergunta {current} de {total}",
+    "openQuestions": {
+      "title": "Mais duas perguntas opcionais",
+      "consentLabel": "Posso usar essas respostas (sem identificar você ou seu filho) para ajudar a melhorar os próximos livros da coleção?",
+      "privacyNotice": "Não inclua nomes, escola, endereço ou informações que possam identificar a criança.",
+      "question1": "Existe alguma situação específica que tem sido difícil para vocês recentemente?",
+      "question2": "Existe algo que você gostaria especialmente de ajudar seu filho a aprender ou desenvolver?",
+      "continueLabel": "Continuar"
+    }
+  },
+  "results": {
+    "title": "Seu resultado",
+    "primaryLabel": "Tema principal",
+    "secondaryLabel": "Tema secundário",
+    "tipsTitle": "O que você pode fazer",
+    "bookCta": "Conhecer na Amazon",
+    "bookComingSoon": "Estamos preparando uma história sobre este tema.",
+    "notFoundTitle": "Resultado não encontrado",
+    "notFoundBody": "Esse resultado pode ter expirado ou o link está incorreto."
+  },
+  "forms": {}
+}

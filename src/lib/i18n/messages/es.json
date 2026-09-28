@@ -1,0 +1,44 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "books": "Libros"
+  },
+  "home": {
+    "tagline": "Luz para corazones que crecen.",
+    "proposalTitle": "Meu Coração Diante de Deus",
+    "proposalBody": "Historias que ayudan a los padres a formar el corazón de sus hijos a la luz de la Palabra de Dios.",
+    "ctaQuiz": "Descubre qué tema puede ser más importante trabajar con tu hijo ahora mismo.",
+    "ctaQuizButton": "Hacer el cuestionario",
+    "philosophyTitle": "No es solo una editorial infantil",
+    "philosophyBody": "Es un universo cristiano de formación infantil a través de historias, experiencias, actividades y juegos.",
+    "bookSectionTitle": "Nuestro primer libro",
+    "ctaAmazon": "Conócelo en Amazon",
+    "comingSoon": "Nuevos libros de la colección Meu Coração Diante de Deus están en camino."
+  },
+  "quiz": {
+    "intro": "Toma menos de 2 minutos. Descubramos juntos qué tema puede ser más importante trabajar con tu hijo ahora mismo.",
+    "start": "Comenzar",
+    "loading": "Un momento...",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "progress": "Pregunta {current} de {total}",
+    "openQuestions": {
+      "title": "Dos preguntas más, opcionales",
+      "consentLabel": "¿Podemos usar estas respuestas (sin identificarte a ti ni a tu hijo) para ayudar a mejorar los próximos libros de la colección?",
+      "privacyNotice": "No incluyas nombres, escuela, dirección ni información que pueda identificar al niño.",
+      "question1": "¿Hay alguna situación específica que haya sido difícil para ustedes últimamente?",
+      "question2": "¿Hay algo que te gustaría especialmente ayudar a tu hijo a aprender o desarrollar?",
+      "continueLabel": "Continuar"
+    }
+  },
+  "results": {
+    "title": "Tu resultado",
+    "primaryLabel": "Tema principal",
+    "secondaryLabel": "Tema secundario",
+    "tipsTitle": "Qué puedes hacer",
+    "bookCta": "Conócelo en Amazon",
+    "bookComingSoon": "Estamos preparando una historia sobre este tema.",
+    "notFoundTitle": "Resultado no encontrado",
+    "notFoundBody": "Este resultado puede haber caducado, o el enlace es incorrecto."
+  },
+  "forms": {}
+}

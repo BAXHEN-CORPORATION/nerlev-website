@@ -1,0 +1,44 @@
+{
+  "navigation": {
+    "home": "Home",
+    "books": "Books"
+  },
+  "home": {
+    "tagline": "Light for growing hearts.",
+    "proposalTitle": "Meu Coração Diante de Deus",
+    "proposalBody": "Stories that help parents shape their children's hearts in the light of God's Word.",
+    "ctaQuiz": "Discover which theme might be most important to work on with your child right now.",
+    "ctaQuizButton": "Take the quiz",
+    "philosophyTitle": "Not just a children's publisher",
+    "philosophyBody": "It's a Christian universe for forming children through stories, experiences, activities, and games.",
+    "bookSectionTitle": "Our first book",
+    "ctaAmazon": "Find it on Amazon",
+    "comingSoon": "New books in the Meu Coração Diante de Deus collection are on the way."
+  },
+  "quiz": {
+    "intro": "It takes less than 2 minutes. Let's find out together which theme might be most important to work on with your child right now.",
+    "start": "Start",
+    "loading": "Just a moment...",
+    "error": "Something went wrong. Please try again.",
+    "progress": "Question {current} of {total}",
+    "openQuestions": {
+      "title": "Two more optional questions",
+      "consentLabel": "Can we use these answers (without identifying you or your child) to help improve future books in the collection?",
+      "privacyNotice": "Please don't include names, school, address, or anything that could identify your child.",
+      "question1": "Is there a specific situation that's been difficult for you both recently?",
+      "question2": "Is there something you'd especially like to help your child learn or develop?",
+      "continueLabel": "Continue"
+    }
+  },
+  "results": {
+    "title": "Your result",
+    "primaryLabel": "Main theme",
+    "secondaryLabel": "Secondary theme",
+    "tipsTitle": "What you can do",
+    "bookCta": "Find it on Amazon",
+    "bookComingSoon": "We're preparing a story about this theme.",
+    "notFoundTitle": "Result not found",
+    "notFoundBody": "This result may have expired, or the link is incorrect."
+  },
+  "forms": {}
+}
