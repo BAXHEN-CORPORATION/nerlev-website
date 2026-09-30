@@ -5,3 +5,7 @@
 [build.environment]
   PNPM_VERSION = "10"
   NODE_VERSION = "22"
+  # NEXT_PUBLIC_* are inlined into the client bundle by design (public, RLS-protected).
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_POSTHOG_KEY,NEXT_PUBLIC_SUPABASE_ANON_KEY,NEXT_PUBLIC_POSTHOG_HOST,NEXT_PUBLIC_SUPABASE_URL"
+  # Turbopack build cache is not served; it only holds server env snapshots.
+  SECRETS_SCAN_OMIT_PATHS = ".netlify/.next/cache/**"
