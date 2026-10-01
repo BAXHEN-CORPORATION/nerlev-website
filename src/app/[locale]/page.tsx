@@ -58,7 +58,7 @@ export default async function Home({ params }: PageProps<'/[locale]'>) {
               {t('bookSectionTitle')}
             </h2>
             <div className="w-64">
-              <BookCover book={book} alt={book.title[locale]} priority />
+              <BookCover book={book} locale={locale} alt={book.title[locale]} priority />
             </div>
             <div>
               <h3 className="font-display text-deep-blue text-xl font-semibold">
@@ -68,7 +68,7 @@ export default async function Home({ params }: PageProps<'/[locale]'>) {
             </div>
             {/* 5. CTA de compra na Amazon */}
             <a
-              href={`/r/${book.code.toLowerCase()}/amazon`}
+              href={`/r/${book.code.toLowerCase()}/amazon?lang=${locale}`}
               className="border-deep-blue text-deep-blue rounded-full border px-8 py-3 text-base font-medium transition-colors hover:bg-white/50"
             >
               {t('ctaAmazon')}

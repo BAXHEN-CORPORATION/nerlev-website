@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { isValidLocale, routing } from '@/lib/i18n/routing'
 import { getBookBySlug, listBooks } from '@/modules/catalog/application'
+import { coverFor } from '@/modules/catalog/domain'
 import { BookCover } from '@/modules/catalog/ui'
 import { buildAlternates } from '@/shared/seo/alternates'
 import { absoluteUrl, assetUrl } from '@/shared/seo/site-url'
@@ -32,7 +33,7 @@ export async function generateMetadata({
       description,
       locale,
       type: 'website',
-      images: [assetUrl(book.cover.src)],
+      images: [assetUrl(coverFor(book, locale).src)],
     },
   }
 }
@@ -55,7 +56,7 @@ export default async function BookPage({ params }: PageProps<'/[locale]/livros/[
     name: book.title[locale],
     description: book.subtitle[locale],
     author: { '@type': 'Person', name: book.author },
-    image: assetUrl(book.cover.src),
+    image: assetUrl(coverFor(book, locale).src),
     url: absoluteUrl(locale, `/livros/${book.slug}`),
     inLanguage: locale,
   }
@@ -64,7 +65,7 @@ export default async function BookPage({ params }: PageProps<'/[locale]/livros/[
     <main className="mx-auto flex max-w-3xl flex-1 flex-col items-center gap-8 px-6 py-16 text-center">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="w-64 sm:w-80">
-        <BookCover book={book} alt={book.title[locale]} priority />
+        <BookCover book={book} locale={locale} alt={book.title[locale]} priority />
       </div>
       <div>
         <h1 className="font-display text-deep-blue text-3xl font-semibold">{book.title[locale]}</h1>
@@ -72,7 +73,7 @@ export default async function BookPage({ params }: PageProps<'/[locale]/livros/[
         <p className="text-ink mt-4">{book.author}</p>
       </div>
       <a
-        href={`/r/${book.code.toLowerCase()}/amazon`}
+        href={`/r/${book.code.toLowerCase()}/amazon?lang=${locale}`}
         className="bg-deep-blue text-soft-white rounded-full px-8 py-3 text-base font-medium transition-opacity hover:opacity-90"
       >
         {t('ctaAmazon')}

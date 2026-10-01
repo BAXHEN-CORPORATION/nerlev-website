@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 import { listBooks } from '@/modules/catalog/application'
+import { amazonUrlFor } from '@/modules/catalog/domain'
+import { isValidLocale } from '@/lib/i18n/routing'
 import { logAmazonClickBestEffort } from '@/modules/attribution/actions'
 import { assertWithinRateLimit, RateLimitExceededError } from '@/shared/rate-limit'
 
@@ -39,5 +41,7 @@ export async function GET(request: Request, context: RouteContext<'/r/[book]/ama
     utmContent: url.searchParams.get('utm_content') ?? undefined,
   })
 
-  return NextResponse.redirect(book.amazonUrl, 302)
+  const lang = url.searchParams.get('lang')
+  const target = lang && isValidLocale(lang) ? amazonUrlFor(book, lang) : book.amazonUrl
+  return NextResponse.redirect(target, 302)
 }

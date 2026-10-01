@@ -65,10 +65,10 @@ export default async function ResultPage({ params }: PageProps<'/[locale]/result
       {book ? (
         <div className="flex flex-col items-center gap-4">
           <div className="w-56">
-            <BookCover book={book} alt={book.title[locale]} />
+            <BookCover book={book} locale={locale} alt={book.title[locale]} />
           </div>
           <a
-            href={`/r/${book.code.toLowerCase()}/amazon?session=${session}`}
+            href={`/r/${book.code.toLowerCase()}/amazon?session=${session}&lang=${locale}`}
             className="bg-deep-blue text-soft-white rounded-full px-8 py-3 text-base font-medium transition-opacity hover:opacity-90"
           >
             {t('bookCta')}

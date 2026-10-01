@@ -13,7 +13,7 @@ export function BookCard({ book, locale }: { book: Book; locale: Locale }) {
       className="flex flex-col items-center gap-4 text-center transition-opacity hover:opacity-80"
     >
       <div className="w-48">
-        <BookCover book={book} alt={title} />
+        <BookCover book={book} locale={locale} alt={title} />
       </div>
       <div>
         <h3 className="font-display text-xl font-semibold text-deep-blue">{title}</h3>
