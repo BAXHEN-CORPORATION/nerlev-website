@@ -69,6 +69,8 @@ export default async function Home({ params }: PageProps<'/[locale]'>) {
             {/* 5. CTA de compra na Amazon */}
             <a
               href={`/r/${book.code.toLowerCase()}/amazon?lang=${locale}`}
+        target="_blank"
+        rel="noopener noreferrer"
               className="border-deep-blue text-deep-blue rounded-full border px-8 py-3 text-base font-medium transition-colors hover:bg-white/50"
             >
               {t('ctaAmazon')}

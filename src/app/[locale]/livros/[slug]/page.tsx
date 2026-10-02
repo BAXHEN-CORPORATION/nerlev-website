@@ -74,6 +74,8 @@ export default async function BookPage({ params }: PageProps<'/[locale]/livros/[
       </div>
       <a
         href={`/r/${book.code.toLowerCase()}/amazon?lang=${locale}`}
+        target="_blank"
+        rel="noopener noreferrer"
         className="bg-deep-blue text-soft-white rounded-full px-8 py-3 text-base font-medium transition-opacity hover:opacity-90"
       >
         {t('ctaAmazon')}

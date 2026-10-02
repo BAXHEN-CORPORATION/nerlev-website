@@ -69,6 +69,8 @@ export default async function ResultPage({ params }: PageProps<'/[locale]/result
           </div>
           <a
             href={`/r/${book.code.toLowerCase()}/amazon?session=${session}&lang=${locale}`}
+        target="_blank"
+        rel="noopener noreferrer"
             className="bg-deep-blue text-soft-white rounded-full px-8 py-3 text-base font-medium transition-opacity hover:opacity-90"
           >
             {t('bookCta')}
