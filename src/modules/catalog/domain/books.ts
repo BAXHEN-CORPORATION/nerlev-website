@@ -13,11 +13,13 @@ export const books: Book[] = [
       pt: 'Quando tenho medo',
       en: "When I'm Afraid",
       es: 'Cuando tengo miedo',
+      fr: "Quand j'ai peur",
     },
     subtitle: {
       pt: 'Uma história de Davi',
       en: 'A Story of David',
       es: 'Una historia de David',
+      fr: 'Une histoire de David',
     },
     author: 'Leonardo Rebouças Batista',
     cover: {
@@ -31,6 +33,7 @@ export const books: Book[] = [
     amazonUrl: 'https://www.amazon.es/dp/B0HKYZ1LHN',
     amazonUrlByLocale: {
       en: 'https://www.amazon.com/dp/B0HLP4SH2D',
+      fr: 'https://www.amazon.fr/dp/B0HNV6G6DH',
     },
   },
 ]

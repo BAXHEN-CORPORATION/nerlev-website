@@ -4,6 +4,7 @@ const bookTitleByLocale = {
   pt: 'Quando tenho medo',
   en: "When I'm Afraid",
   es: 'Cuando tengo miedo',
+  fr: "Quand j'ai peur",
 } as const
 
 for (const [locale, title] of Object.entries(bookTitleByLocale)) {

@@ -30,9 +30,17 @@ const labels = {
     success: '¡Listo! Revisa tu bandeja de entrada.',
     amazonCta: 'Conócelo en Amazon',
   },
+  fr: {
+    ctaQuizButton: 'Faire le questionnaire',
+    start: 'Commencer',
+    continueLabel: 'Continuer',
+    send: 'Envoyer',
+    success: "C'est fait ! Surveillez votre boîte de réception.",
+    amazonCta: 'Le découvrir sur Amazon',
+  },
 } as const
 
-for (const locale of ['pt', 'en', 'es'] as const) {
+for (const locale of ['pt', 'en', 'es', 'fr'] as const) {
   test(`full flow — Home→Quiz→Perguntas→Feedback→Resultado→Email→Amazon (${locale})`, async ({
     page,
   }) => {

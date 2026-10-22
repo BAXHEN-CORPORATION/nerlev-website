@@ -1,0 +1,100 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "books": "Livres",
+    "privacy": "Confidentialité"
+  },
+  "home": {
+    "tagline": "De la lumière pour les cœurs qui grandissent.",
+    "proposalTitle": "Mon Cœur Devant Dieu",
+    "proposalBody": "Des histoires qui aident les parents à façonner le cœur de leurs enfants à la lumière de la Parole de Dieu.",
+    "ctaQuiz": "Découvrez quel thème pourrait être le plus important à travailler avec votre enfant en ce moment.",
+    "ctaQuizButton": "Faire le questionnaire",
+    "philosophyTitle": "Pas seulement une maison d'édition pour enfants",
+    "philosophyBody": "C'est un univers chrétien pour former les enfants à travers des histoires, des expériences, des activités et des jeux.",
+    "bookSectionTitle": "Notre premier livre",
+    "ctaAmazon": "Le découvrir sur Amazon",
+    "comingSoon": "De nouveaux livres de la collection Mon Cœur Devant Dieu arrivent bientôt."
+  },
+  "quiz": {
+    "intro": "Cela prend moins de 2 minutes. Découvrons ensemble quel thème pourrait être le plus important à travailler avec votre enfant en ce moment.",
+    "start": "Commencer",
+    "loading": "Un instant...",
+    "error": "Une erreur s'est produite. Veuillez réessayer.",
+    "progress": "Question {current} sur {total}",
+    "openQuestions": {
+      "title": "Deux questions facultatives de plus",
+      "consentLabel": "Pouvons-nous utiliser ces réponses (sans vous identifier, vous ou votre enfant) pour aider à améliorer les prochains livres de la collection ?",
+      "privacyNotice": "Merci de ne pas inclure de noms, d'école, d'adresse ou quoi que ce soit qui pourrait identifier votre enfant.",
+      "question1": "Y a-t-il une situation précise qui a été difficile pour vous deux récemment ?",
+      "question2": "Y a-t-il quelque chose que vous aimeriez particulièrement aider votre enfant à apprendre ou à développer ?",
+      "continueLabel": "Continuer"
+    }
+  },
+  "results": {
+    "title": "Votre résultat",
+    "primaryLabel": "Thème principal",
+    "secondaryLabel": "Thème secondaire",
+    "tipsTitle": "Ce que vous pouvez faire",
+    "bookCta": "Le découvrir sur Amazon",
+    "bookComingSoon": "Nous préparons une histoire sur ce thème.",
+    "notFoundTitle": "Résultat introuvable",
+    "notFoundBody": "Ce résultat a peut-être expiré, ou le lien est incorrect.",
+    "emailSubject": "Votre résultat",
+    "emailGreeting": "Voici votre résultat du questionnaire, accompagné de quelques questions à aborder avec votre enfant.",
+    "emailFooter": "NerLev — De la lumière pour les cœurs qui grandissent."
+  },
+  "forms": {
+    "leadCapture": {
+      "promptWithBook": "Voulez-vous recevoir ce résultat avec des questions à aborder avec votre enfant ?",
+      "promptWithoutBook": "Nous n'avons pas encore de livre sur ce thème. Voulez-vous que nous vous prévenions à sa sortie ?",
+      "emailLabel": "Votre e-mail",
+      "emailPlaceholder": "vous@exemple.com",
+      "marketingConsentLabel": "Je souhaite être informé(e) des nouveaux livres de la collection.",
+      "submitLabel": "Envoyer",
+      "waitlistSubmitLabel": "Me prévenir",
+      "successMessage": "C'est fait ! Surveillez votre boîte de réception.",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
+    }
+  },
+  "privacy": {
+    "title": "Confidentialité",
+    "draftNotice": "Ceci est la première version (v1) de cette politique, rédigée par notre équipe d'après ce que fait réellement le site. Elle n'a pas encore fait l'objet d'une relecture juridique formelle — nous la mettrons à jour à mesure que le projet évolue.",
+    "updated": "Mis à jour en septembre 2026",
+    "intro": "Mon Cœur Devant Dieu est un questionnaire et un catalogue de livres destinés aux parents. Nous prenons au sérieux le fait de traiter des informations sur des enfants, même sans les identifier directement. Cette page explique ce que nous faisons des données que vous nous confiez.",
+    "neverCollectTitle": "Ce que nous ne collectons jamais",
+    "neverCollect": [
+      "Le prénom de votre enfant",
+      "L'école de votre enfant",
+      "L'adresse",
+      "Le numéro de téléphone",
+      "La photo",
+      "La date de naissance exacte"
+    ],
+    "collectTitle": "Ce que nous collectons",
+    "collect": [
+      "La tranche d'âge de votre enfant (pas sa date de naissance exacte)",
+      "Vos réponses au questionnaire",
+      "Du texte libre facultatif, seulement si vous acceptez de le partager"
+    ],
+    "consentTitle": "Deux consentements, toujours distincts",
+    "consentResearch": "À la fin du questionnaire, nous vous demandons si nous pouvons utiliser vos réponses libres (sans vous identifier, vous ou votre enfant) pour améliorer les prochains livres de la collection. Si vous ne cochez pas cette case, aucun de ces textes n'est enregistré — pas même une trace indiquant que vous avez refusé.",
+    "consentMarketing": "Si vous laissez votre e-mail pour recevoir votre résultat, vous pouvez choisir séparément si vous souhaitez être informé(e) des nouveaux livres. Refuser ne vous empêche jamais de recevoir votre résultat par e-mail.",
+    "providersTitle": "Qui traite ces données pour nous",
+    "providersIntro": "Nous utilisons un petit nombre de services externes, chacun choisi pour ce qu'il fait, et non par défaut :",
+    "providerSupabase": "Supabase (base de données, serveurs dans l'Union européenne) stocke vos réponses et, si vous le laissez, votre e-mail.",
+    "providerResend": "Resend envoie l'e-mail de résultat, lorsque vous le demandez.",
+    "providerPostHog": "PostHog (serveurs dans l'Union européenne) enregistre la façon dont les pages sont utilisées (et non le contenu de vos réponses) afin que nous comprenions ce qui fonctionne. Aujourd'hui, il démarre dès que vous ouvrez le site, sans demander d'autorisation au préalable — nous savons qu'il s'agit d'une vraie lacune et prévoyons d'ajouter un bandeau de cookies pour y remédier.",
+    "securityTitle": "Comment nous protégeons ce que vous partagez",
+    "security": [
+      "Chaque saisie est validée côté serveur avant d'être enregistrée",
+      "Le texte libre a une limite de taille",
+      "Nous limitons le nombre de fois où un même visiteur peut envoyer des formulaires en peu de temps",
+      "Un champ caché aide à bloquer les envois automatisés (bots)",
+      "L'ensemble du site fonctionne en HTTPS",
+      "Les clés techniques et les secrets n'atteignent jamais votre navigateur"
+    ],
+    "contactTitle": "Des questions ?",
+    "contactBody": "Nous n'avons pas encore de canal d'assistance dédié avec un domaine propre pour ce projet — nous prévoyons d'en ajouter un dès que le site aura dépassé ses débuts."
+  }
+}

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-const locales = ['pt', 'en', 'es'] as const
+const locales = ['pt', 'en', 'es', 'fr'] as const
 
 for (const locale of locales) {
   test(`home renders in ${locale}`, async ({ page }) => {
@@ -16,7 +16,7 @@ for (const locale of locales) {
 test('root redirects to a supported locale', async ({ page }) => {
   // next-intl negotiates the locale from Accept-Language, so the exact match
   // depends on the browser's locale — what matters is that proxy.ts actually
-  // rewrites '/' into one of our three supported, prefixed locales.
+  // rewrites '/' into one of our supported, prefixed locales.
   await page.goto('/')
-  await expect(page).toHaveURL(/\/(pt|en|es)$/)
+  await expect(page).toHaveURL(/\/(pt|en|es|fr)$/)
 })

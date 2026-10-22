@@ -31,8 +31,8 @@ test('an unknown session id shows the not-found state instead of crashing', asyn
   await expect(page.getByRole('heading', { name: 'Resultado não encontrado' })).toBeVisible()
 })
 
-test('/descobrir renders the intro screen in all three locales', async ({ page }) => {
-  for (const locale of ['pt', 'en', 'es']) {
+test('/descobrir renders the intro screen in all locales', async ({ page }) => {
+  for (const locale of ['pt', 'en', 'es', 'fr']) {
     const response = await page.goto(`/${locale}/descobrir`)
     expect(response?.status()).toBe(200)
   }
