@@ -33,6 +33,7 @@ export const books: Book[] = [
     amazonUrl: 'https://www.amazon.es/dp/B0HKYZ1LHN',
     amazonUrlByLocale: {
       en: 'https://www.amazon.com/dp/B0HLP4SH2D',
+      es: 'https://www.amazon.es/dp/B0HLZJR56N',
       fr: 'https://www.amazon.fr/dp/B0HNV6G6DH',
     },
   },
